@@ -1,0 +1,27 @@
+
+[
+    {
+        "id": 1,
+        "name": "Eiffel Tower",
+        "description": "A famous landmark in Paris.",
+        "latitude": 48.8584,
+        "longitude": 2.2945,
+        "image": "eiffel_tower.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Great Wall of China",
+        "description": "A series of fortifications made of stone, brick, tamped earth, wood, and other materials.",
+        "latitude": 40.4311,
+        "longitude": 116.5742,
+        "image": "great_wall.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Golden Gate Bridge",
+        "description": "A suspension bridge spanning the Golden Gate, the one-mile-wide strait connecting San Francisco Bay and the Pacific Ocean.",
+        "latitude": 37.8199,
+        "longitude": -122.4783,
+        "image": "golden_gate_bridge.jpg"
+    }
+]
