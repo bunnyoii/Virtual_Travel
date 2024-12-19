@@ -2,7 +2,9 @@
 //  ContentView.swift
 //  VirtualTravel
 //
-//  Created by 刘淑仪 on 2024/12/19.
+//  SwiftUI 视图文件，用于定义应用程序的主界面
+//
+//  Updated by 刘淑仪 on 2024/12/20
 //
 
 import SwiftUI

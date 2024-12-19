@@ -2,7 +2,9 @@
 //  LocationManager.swift
 //  VirtualTravel
 //
-//  Created by 刘淑仪 on 2024/12/19.
+//  用于管理用户位置的类，基于 CoreLocation 框架实现
+//
+//  Updated by 刘淑仪 on 2024/12/20
 //
 
 import CoreLocation

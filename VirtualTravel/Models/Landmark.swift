@@ -2,7 +2,9 @@
 //  Landmark.swift
 //  VirtualTravel
 //
-//  Created by 刘淑仪 on 2024/12/19.
+//  数据模型文件，用于定义地标（Landmark）的结构
+//
+//  Updated by 刘淑仪 on 2024/12/20
 //
 
 import Foundation

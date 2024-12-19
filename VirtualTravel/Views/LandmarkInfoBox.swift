@@ -2,7 +2,9 @@
 //  LandmarkInfoBox.swift
 //  VirtualTravel
 //
-//  Created by 刘淑仪 on 2024/12/19.
+//  SwiftUI 视图文件，用于显示地标的简要信息
+//
+//  Updated by 刘淑仪 on 2024/12/20
 //
 
 import SwiftUI

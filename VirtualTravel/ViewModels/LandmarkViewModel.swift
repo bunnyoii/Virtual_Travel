@@ -2,7 +2,9 @@
 //  LandmarkViewModel.swift
 //  VirtualTravel
 //
-//  Created by 刘淑仪 on 2024/12/19.
+//  SwiftUI 视图模型文件，用于管理地标数据和地图区域的状态
+//
+//  Updated by 刘淑仪 on 2024/12/20
 //
 
 import Foundation
