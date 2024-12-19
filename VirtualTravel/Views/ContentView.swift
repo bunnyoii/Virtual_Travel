@@ -9,31 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = LandmarkViewModel()
-    @State private var searchText = ""
-
-    var filteredLandmarks: [Landmark] {
-        if searchText.isEmpty {
-            return viewModel.landmarks
-        } else {
-            return viewModel.landmarks.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-        }
-    }
 
     var body: some View {
         NavigationView {
             VStack {
-                // 搜索框
-                TextField("Search landmarks", text: $searchText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-
-                // 地图视图
-                MapView()
-                    .frame(height: 300) // 设置地图的高度
+                MapView(viewModel: viewModel)
+                    .frame(height: 300)
                     .padding(.bottom)
 
-                // 地标列表
-                List(filteredLandmarks) { landmark in
+                List(viewModel.landmarks) { landmark in
                     NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
                         Text(landmark.name)
                     }

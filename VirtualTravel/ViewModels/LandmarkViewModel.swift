@@ -6,12 +6,28 @@
 //
 
 import Foundation
+import CoreLocation
+import Combine
+import MapKit
 
 class LandmarkViewModel: ObservableObject {
     @Published var landmarks: [Landmark] = []
+    @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    @Published var userLocation: CLLocation?
+
+    private let locationManager = LocationManager()
+    private var cancellables = Set<AnyCancellable>()
 
     init() {
         loadLandmarks()
+        locationManager.$userLocation
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] (location: CLLocation?) in
+                if let location = location {
+                    self?.mapRegion = MKCoordinateRegion(center: location.coordinate, span: self?.mapRegion.span ?? MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+                }
+            }
+            .store(in: &cancellables)
     }
 
     func loadLandmarks() {
