@@ -6,7 +6,7 @@
         "description": "A famous landmark in Paris.",
         "latitude": 48.8584,
         "longitude": 2.2945,
-        "image": "eiffel_tower.jpg"
+        "image": "test.jpg"
     },
     {
         "id": 2,
@@ -14,7 +14,7 @@
         "description": "A series of fortifications made of stone, brick, tamped earth, wood, and other materials.",
         "latitude": 40.4311,
         "longitude": 116.5742,
-        "image": "great_wall.jpg"
+        "image": "test.jpg"
     },
     {
         "id": 3,
@@ -22,6 +22,62 @@
         "description": "A suspension bridge spanning the Golden Gate, the one-mile-wide strait connecting San Francisco Bay and the Pacific Ocean.",
         "latitude": 37.8199,
         "longitude": -122.4783,
-        "image": "golden_gate_bridge.jpg"
+        "image": "test.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Alcatraz Island",
+        "description": "A former prison located on an island in the San Francisco Bay, known for its infamous inmates.",
+        "latitude": 37.8267,
+        "longitude": -122.4233,
+        "image": "test.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Fisherman's Wharf",
+        "description": "A popular tourist area in San Francisco, known for its seafood, shops, and attractions.",
+        "latitude": 37.8086,
+        "longitude": -122.4161,
+        "image": "test.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Palace of Fine Arts",
+        "description": "A monumental structure in the Marina District, known for its classical architecture and tranquil lagoon.",
+        "latitude": 37.8018,
+        "longitude": -122.4483,
+        "image": "test.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Lombard Street",
+        "description": "A famous crooked street in San Francisco, known for its steep, winding path and beautiful flowers.",
+        "latitude": 37.8022,
+        "longitude": -122.4187,
+        "image": "test.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Chinatown",
+        "description": "The oldest Chinatown in North America, known for its vibrant culture, shops, and restaurants.",
+        "latitude": 37.7941,
+        "longitude": -122.4078,
+        "image": "test.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Coit Tower",
+        "description": "A tower perched on Telegraph Hill, offering panoramic views of San Francisco and the Bay.",
+        "latitude": 37.8024,
+        "longitude": -122.4058,
+        "image": "test.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Pier 39",
+        "description": "A popular shopping and dining destination in San Francisco, known for its sea lions and bay views.",
+        "latitude": 37.8086,
+        "longitude": -122.4098,
+        "image": "test.jpg"
     }
 ]

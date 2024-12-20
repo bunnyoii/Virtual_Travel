@@ -24,13 +24,20 @@ struct ContentView: View {
                     .frame(height: 300)
                     .padding(.bottom)
 
-                // 地标列表
                 List(viewModel.filteredLandmarks) { landmark in
-                    NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
+                    NavigationLink(destination: LandmarkDetailView(landmark: landmark, viewModel: viewModel)) {
                         Text(landmark.name)
                     }
                 }
                 .navigationTitle("Landmarks")
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: FavoritesView(viewModel: viewModel)) {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(.red)
+                    }
+                }
             }
         }
     }

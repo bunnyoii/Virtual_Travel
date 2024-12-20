@@ -21,7 +21,7 @@ struct MapView: View {
             annotationItems: viewModel.filteredLandmarks, // 使用过滤后的地标
             annotationContent: { landmark in
                 MapAnnotation(coordinate: landmark.coordinate) {
-                    NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
+                    NavigationLink(destination: LandmarkDetailView(landmark: landmark, viewModel: viewModel)) {
                         VStack {
                             Text(landmark.name)
                                 .font(.caption)

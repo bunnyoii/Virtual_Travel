@@ -14,9 +14,12 @@ import MapKit
 
 class LandmarkViewModel: ObservableObject {
     @Published var landmarks: [Landmark] = []
-    @Published var filteredLandmarks: [Landmark] = [] // 新增：用于存储过滤后的地标
-    @Published var searchText: String = "" // 新增：搜索框的输入内容
-    @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    @Published var filteredLandmarks: [Landmark] = [] // 用于存储过滤后的地标
+    @Published var searchText: String = "" // 搜索框的输入内容
+    @Published var mapRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 31.2839, longitude: 121.2100), // 默认位置：上海嘉定同济大学
+        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01) // 缩放级别
+    )
     @Published var userLocation: CLLocation?
 
     private let locationManager = LocationManager()

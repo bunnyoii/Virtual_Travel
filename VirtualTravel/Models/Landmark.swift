@@ -16,7 +16,7 @@ struct Landmark: Identifiable, Codable, Hashable {
     let description: String
     let latitude: Double
     let longitude: Double
-    let image: String // 图片文件名
+    let image: String
 
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
