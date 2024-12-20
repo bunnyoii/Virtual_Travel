@@ -2,10 +2,10 @@
 [
     {
         "id": 1,
-        "name": "Eiffel Tower",
-        "description": "A famous landmark in Paris.",
-        "latitude": 48.8584,
-        "longitude": 2.2945,
+        "name": "National Mall",
+        "description": "A national park in Washington, D.C., home to many monuments and museums.",
+        "latitude": 38.8922,
+        "longitude": -77.0243,
         "image": "test.jpg"
     },
     {
@@ -78,6 +78,86 @@
         "description": "A popular shopping and dining destination in San Francisco, known for its sea lions and bay views.",
         "latitude": 37.8086,
         "longitude": -122.4098,
+        "image": "test.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Statue of Liberty",
+        "description": "A symbolic monument located in New York Harbor, gifted by France.",
+        "latitude": 40.6892,
+        "longitude": -74.0445,
+        "image": "test.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Grand Canyon",
+        "description": "A massive canyon in Arizona, carved by the Colorado River over millions of years.",
+        "latitude": 36.1069,
+        "longitude": -112.1125,
+        "image": "test.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Mount Rushmore",
+        "description": "A monumental sculpture in the Black Hills of South Dakota, featuring four U.S. presidents.",
+        "latitude": 43.8753,
+        "longitude": -103.4593,
+        "image": "test.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Niagara Falls",
+        "description": "A group of powerful waterfalls straddling the border between the United States and Canada.",
+        "latitude": 43.0792,
+        "longitude": -79.0722,
+        "image": "test.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Yellowstone National Park",
+        "description": "The first national park in the world, known for its geothermal features and wildlife.",
+        "latitude": 44.4277,
+        "longitude": -110.5579,
+        "image": "test.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Times Square",
+        "description": "A brightly illuminated commercial intersection in Midtown Manhattan, New York City.",
+        "latitude": 40.7589,
+        "longitude": -73.9851,
+        "image": "test.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Empire State Building",
+        "description": "A iconic skyscraper in Midtown Manhattan, offering panoramic views of the city.",
+        "latitude": 40.7484,
+        "longitude": -73.9857,
+        "image": "test.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Rocky Mountain National Park",
+        "description": "A national park in Colorado, featuring majestic mountain scenery and diverse wildlife.",
+        "latitude": 40.3879,
+        "longitude": -105.5775,
+        "image": "test.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Disneyland Park",
+        "description": "A theme park in Anaheim, California, known as 'The Happiest Place on Earth.'",
+        "latitude": 33.8112,
+        "longitude": -117.9182,
+        "image": "test.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Space Needle",
+        "description": "A iconic tower in Seattle, offering panoramic views of the city and the Puget Sound.",
+        "latitude": 47.6205,
+        "longitude": -122.3493,
         "image": "test.jpg"
     }
 ]
