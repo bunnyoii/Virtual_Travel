@@ -18,7 +18,7 @@ struct MapView: View {
             coordinateRegion: $viewModel.mapRegion,
             interactionModes: .all,
             showsUserLocation: true,
-            annotationItems: viewModel.landmarks,
+            annotationItems: viewModel.filteredLandmarks, // 使用过滤后的地标
             annotationContent: { landmark in
                 MapAnnotation(coordinate: landmark.coordinate) {
                     NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {

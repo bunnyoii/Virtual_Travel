@@ -14,6 +14,8 @@ import MapKit
 
 class LandmarkViewModel: ObservableObject {
     @Published var landmarks: [Landmark] = []
+    @Published var filteredLandmarks: [Landmark] = [] // 新增：用于存储过滤后的地标
+    @Published var searchText: String = "" // 新增：搜索框的输入内容
     @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     @Published var userLocation: CLLocation?
 
@@ -30,6 +32,14 @@ class LandmarkViewModel: ObservableObject {
                 }
             }
             .store(in: &cancellables)
+
+        // 监听 searchText 的变化，并过滤地标
+        $searchText
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main) // 延迟 0.5 秒处理搜索
+            .map { searchText in
+                searchText.isEmpty ? self.landmarks : self.landmarks.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            }
+            .assign(to: &$filteredLandmarks)
     }
 
     func loadLandmarks() {
@@ -37,6 +47,7 @@ class LandmarkViewModel: ObservableObject {
             do {
                 let data = try Data(contentsOf: url)
                 landmarks = try JSONDecoder().decode([Landmark].self, from: data)
+                filteredLandmarks = landmarks // 初始化时，filteredLandmarks 与 landmarks 相同
             } catch {
                 print("Error loading landmarks: \(error)")
             }
