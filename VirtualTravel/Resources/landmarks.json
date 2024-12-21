@@ -1,282 +1,317 @@
 [
     {
         "id": 1,
-        "name": "Golden Gate Bridge",
-        "description": "A suspension bridge spanning the Golden Gate, the one-mile-wide strait connecting San Francisco Bay and the Pacific Ocean.",
+        "name": "金门大桥",
+        "description": "金门大桥是一座横跨金门海峡的悬索桥，连接旧金山湾和太平洋。它是旧金山的标志性建筑之一，以其橙红色的外观和壮丽的景色吸引了无数游客。",
         "latitude": 37.8199,
         "longitude": -122.4783,
-        "image": "test.jpg"
+        "image": "GoldenGateBridge.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 2,
-        "name": "Alcatraz Island",
-        "description": "A former prison located on an island in the San Francisco Bay, known for its infamous inmates.",
+        "name": "恶魔岛",
+        "description": "恶魔岛是一座位于旧金山湾的前联邦监狱，以其严酷的环境和臭名昭著的囚犯而闻名。如今，它已成为一个受欢迎的旅游景点，游客可以参观监狱遗址并了解其历史。",
         "latitude": 37.8267,
         "longitude": -122.4233,
-        "image": "test.jpg"
+        "image": "AlcatrazIsland.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 3,
-        "name": "Fisherman's Wharf",
-        "description": "A popular tourist area in San Francisco, known for its seafood, shops, and attractions.",
+        "name": "渔人码头",
+        "description": "渔人码头是旧金山的一个热门旅游区，以其丰富的海鲜、独特的商店和各种娱乐活动而闻名。这里有许多餐馆、纪念品商店和街头表演，是游客体验旧金山文化的理想场所。",
         "latitude": 37.8086,
         "longitude": -122.4161,
-        "image": "test.jpg"
+        "image": "FishermansWharf.jpg",
+        "category": "商业化类"
     },
     {
         "id": 4,
-        "name": "Palace of Fine Arts",
-        "description": "A monumental structure in the Marina District, known for its classical architecture and tranquil lagoon.",
+        "name": "艺术宫",
+        "description": "艺术宫是一座位于旧金山马林纳区的纪念性建筑，以其古典建筑风格和宁静的泻湖而闻名。它是1915年巴拿马太平洋国际博览会的遗迹，如今是旧金山居民和游客休闲放松的好去处。",
         "latitude": 37.8018,
         "longitude": -122.4483,
-        "image": "test.jpg"
+        "image": "PalaceOfFineArts.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 5,
-        "name": "Lombard Street",
-        "description": "A famous crooked street in San Francisco, known for its steep, winding path and beautiful flowers.",
+        "name": "九曲花街",
+        "description": "九曲花街是旧金山一条著名的弯曲街道，以其陡峭、蜿蜒的路径和美丽的花朵而闻名。它是世界上最弯曲的街道之一，吸引了大量游客前来体验其独特的驾驶挑战和迷人的风景。",
         "latitude": 37.8022,
         "longitude": -122.4187,
-        "image": "test.jpg"
+        "image": "LombardStreet.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 6,
-        "name": "Chinatown",
-        "description": "The oldest Chinatown in North America, known for its vibrant culture, shops, and restaurants.",
+        "name": "唐人街",
+        "description": "唐人街是北美最古老的唐人街，以其充满活力的文化、丰富的历史和多样化的餐馆而闻名。这里有许多中式建筑、寺庙和市场，游客可以品尝到正宗的中餐并体验中国传统文化。",
         "latitude": 37.7941,
         "longitude": -122.4078,
-        "image": "ChinaTown.jpg"
+        "image": "ChinaTown.jpg",
+        "category": "文化与宗教类"
     },
     {
         "id": 7,
-        "name": "Coit Tower",
-        "description": "A tower perched on Telegraph Hill, offering panoramic views of San Francisco and the Bay.",
+        "name": "科伊特塔",
+        "description": "科伊特塔是一座位于旧金山电报山上的塔楼，提供旧金山和海湾的壮丽全景。它是旧金山的标志性建筑之一，游客可以乘坐电梯到达塔顶，欣赏城市和海湾的美丽景色。",
         "latitude": 37.8024,
         "longitude": -122.4058,
-        "image": "test.jpg"
+        "image": "CoitTower.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 8,
-        "name": "Pier 39",
-        "description": "A popular shopping and dining destination in San Francisco, known for its sea lions and bay views.",
+        "name": "39号码头",
+        "description": "39号码头是旧金山一个受欢迎的购物和餐饮目的地，以其海狮和海湾景观而闻名。这里有许多商店、餐馆和娱乐设施，游客可以在这里享受美食、购物和观赏海狮的乐趣。",
         "latitude": 37.8086,
         "longitude": -122.4098,
-        "image": "test.jpg"
+        "image": "Pier39.jpg",
+        "category": "商业化类"
     },
     {
         "id": 9,
-        "name": "National Mall",
-        "description": "A national park in Washington, D.C., home to many monuments and museums.",
+        "name": "国家广场",
+        "description": "国家广场是位于华盛顿特区的一个国家公园，拥有许多纪念碑和博物馆。它是美国历史和文化的象征，游客可以在这里参观林肯纪念堂、华盛顿纪念碑和史密森尼博物馆等著名景点。",
         "latitude": 38.8922,
         "longitude": -77.0243,
-        "image": "test.jpg"
+        "image": "NationalMall.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 10,
-        "name": "Statue of Liberty",
-        "description": "A symbolic monument located in New York Harbor, gifted by France.",
+        "name": "自由女神像",
+        "description": "自由女神像是位于纽约港的象征性纪念碑，由法国赠送。它是美国自由和民主的象征，吸引了来自世界各地的游客。游客可以乘船前往自由岛，近距离欣赏这座宏伟的雕像。",
         "latitude": 40.6892,
         "longitude": -74.0445,
-        "image": "test.jpg"
+        "image": "StatueOfLiberty.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 11,
-        "name": "Mount Rushmore",
-        "description": "A monumental sculpture in the Black Hills of South Dakota, featuring four U.S. presidents.",
+        "name": "拉什莫尔山",
+        "description": "拉什莫尔山是一座位于南达科他州黑山上的纪念性雕塑，雕刻着四位美国总统（乔治·华盛顿、托马斯·杰斐逊、西奥多·罗斯福和亚伯拉罕·林肯）的头像。它是美国历史和文化的象征，吸引了大量游客前来参观。",
         "latitude": 43.8753,
         "longitude": -103.4593,
-        "image": "test.jpg"
+        "image": "MountRushmore.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 12,
-        "name": "Niagara Falls",
-        "description": "A group of powerful waterfalls straddling the border between the United States and Canada.",
+        "name": "尼亚加拉瀑布",
+        "description": "尼亚加拉瀑布是一组横跨美国和加拿大边境的强大瀑布，由马蹄瀑布、美国瀑布和新娘面纱瀑布组成。它是世界上最著名的自然景观之一，吸引了大量游客前来观赏其壮丽的景色。",
         "latitude": 43.0792,
         "longitude": -79.0722,
-        "image": "test.jpg"
+        "image": "NiagaraFalls.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 13,
-        "name": "Yellowstone National Park",
-        "description": "The first national park in the world, known for its geothermal features and wildlife.",
+        "name": "黄石国家公园",
+        "description": "黄石国家公园是世界上第一个国家公园，以其丰富的地热特征、壮丽的自然景观和多样的野生动物而闻名。这里有著名的老忠实喷泉、黄石大峡谷和许多美丽的湖泊，是自然爱好者的天堂。",
         "latitude": 44.4277,
         "longitude": -110.5579,
-        "image": "test.jpg"
+        "image": "YellowstoneNationalPark.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 14,
-        "name": "Times Square",
-        "description": "A brightly illuminated commercial intersection in Midtown Manhattan, New York City.",
+        "name": "时代广场",
+        "description": "时代广场是位于纽约市曼哈顿中城的一个灯火通明的商业交汇处，以其巨大的广告牌、剧院和繁华的街道而闻名。它是纽约市最著名的地标之一，吸引了大量游客前来体验其独特的都市氛围。",
         "latitude": 40.7589,
         "longitude": -73.9851,
-        "image": "test.jpg"
+        "image": "TimesSquare.jpg",
+        "category": "商业化类"
     },
     {
         "id": 15,
-        "name": "Empire State Building",
-        "description": "A iconic skyscraper in Midtown Manhattan, offering panoramic views of the city.",
+        "name": "帝国大厦",
+        "description": "帝国大厦是一座位于纽约市曼哈顿中城的标志性摩天大楼，提供城市全景。它是纽约市最著名的建筑之一，游客可以乘坐电梯到达观景台，欣赏纽约市的壮丽景色。",
         "latitude": 40.7484,
         "longitude": -73.9857,
-        "image": "test.jpg"
+        "image": "EmpireStateBuilding.jpg",
+        "category": "商业化类"
     },
     {
         "id": 16,
-        "name": "Rocky Mountain National Park",
-        "description": "A national park in Colorado, featuring majestic mountain scenery and diverse wildlife.",
+        "name": "落基山国家公园",
+        "description": "落基山国家公园位于科罗拉多州，以其雄伟的山景和多样的野生动物而闻名。这里有壮丽的山峰、清澈的湖泊和丰富的徒步旅行路线，是户外爱好者的理想目的地。",
         "latitude": 40.3879,
         "longitude": -105.5775,
-        "image": "test.jpg"
+        "image": "RockyMountainNationalPark.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 17,
-        "name": "Disneyland Park",
-        "description": "A theme park in Anaheim, California, known as 'The Happiest Place on Earth.'",
+        "name": "迪士尼乐园",
+        "description": "迪士尼乐园是位于加利福尼亚州阿纳海姆的主题公园，被誉为“地球上最快乐的地方”。这里有各种游乐设施、表演和迪士尼经典角色，是家庭和儿童的理想度假胜地。",
         "latitude": 33.8112,
         "longitude": -117.9182,
-        "image": "test.jpg"
+        "image": "DisneylandPark.jpg",
+        "category": "娱乐与休闲类"
     },
     {
         "id": 18,
-        "name": "Space Needle",
-        "description": "A iconic tower in Seattle, offering panoramic views of the city and the Puget Sound.",
+        "name": "太空针塔",
+        "description": "太空针塔是位于西雅图的标志性塔楼，提供城市和普吉特海湾的壮丽全景。它是1962年世界博览会的遗迹，游客可以乘坐电梯到达观景台，欣赏西雅图的美丽景色。",
         "latitude": 47.6205,
         "longitude": -122.3493,
-        "image": "test.jpg"
+        "image": "SpaceNeedle.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 19,
-        "name": "Great Wall of China",
-        "description": "A series of fortifications made of stone, brick, tamped earth, wood, and other materials. It is one of the most iconic symbols of China and a UNESCO World Heritage Site.",
+        "name": "长城",
+        "description": "长城是一系列由石头、砖块、夯土、木材和其他材料建造的防御工事，是中国的标志性象征之一，也是联合国教科文组织世界遗产。它横跨中国北部，是世界上最长的建筑之一。",
         "latitude": 40.4311,
         "longitude": 116.5742,
-        "image": "test.jpg"
+        "image": "GreatWallOfChina.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 20,
-        "name": "Grand Canyon",
-        "description": "A massive canyon in Arizona, carved by the Colorado River over millions of years. It is one of the most famous natural wonders of the world.",
+        "name": "大峡谷",
+        "description": "大峡谷是位于亚利桑那州的一个巨大峡谷，由科罗拉多河经过数百万年的侵蚀形成。它是世界上最著名的自然奇观之一，以其壮丽的景色和多样的地质特征而闻名。",
         "latitude": 36.1069,
         "longitude": -112.1125,
-        "image": "test.jpg"
+        "image": "GrandCanyon.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 21,
-        "name": "Forbidden City",
-        "description": "The imperial palace complex in Beijing, China, known for its historical significance and stunning architecture.",
+        "name": "紫禁城",
+        "description": "紫禁城是位于中国北京的一座皇家宫殿建筑群，以其历史意义和宏伟的建筑而闻名。它是明清两代皇帝的居所，如今是故宫博物院的所在地，吸引了大量游客前来参观。",
         "latitude": 39.9166,
         "longitude": 116.3972,
-        "image": "test.jpg"
+        "image": "ForbiddenCity.jpg",
+        "category": "文化与宗教类"
     },
     {
         "id": 22,
-        "name": "Eiffel Tower",
-        "description": "An iconic iron lattice tower in Paris, France, one of the most recognizable structures in the world.",
+        "name": "埃菲尔铁塔",
+        "description": "埃菲尔铁塔是位于法国巴黎的一座标志性铁塔，是世界上最著名的建筑之一。它是1889年世界博览会的象征，如今是巴黎的标志性景点，吸引了无数游客前来参观。",
         "latitude": 48.8584,
         "longitude": 2.2945,
-        "image": "test.jpg"
+        "image": "EiffelTower.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 23,
-        "name": "Kyoto Temples",
-        "description": "A collection of historic temples in Kyoto, Japan, known for their cultural and spiritual significance.",
+        "name": "京都寺庙",
+        "description": "京都寺庙是一组位于日本京都的历史悠久的寺庙，以其文化和精神意义而闻名。这里有众多古老的佛教寺庙和神社，是游客了解日本传统文化和宗教的理想场所。",
         "latitude": 35.0116,
         "longitude": 135.7681,
-        "image": "test.jpg"
+        "image": "KyotoTemples.jpg",
+        "category": "文化与宗教类"
     },
     {
         "id": 24,
-        "name": "Santorini",
-        "description": "A picturesque island in Greece, famous for its white-washed buildings, blue-domed churches, and stunning sunsets.",
+        "name": "圣托里尼",
+        "description": "圣托里尼是位于希腊的一个风景如画的小岛，以其白色建筑、蓝色圆顶教堂和壮丽的日落而闻名。它是希腊最受欢迎的旅游目的地之一，吸引了大量游客前来享受其美丽的风景和浪漫的氛围。",
         "latitude": 36.3932,
         "longitude": 25.4615,
-        "image": "test.jpg"
+        "image": "Santorini.jpg",
+        "category": "名胜古迹类"
     },
     {
         "id": 25,
-        "name": "Mount Fuji",
-        "description": "Japan's highest mountain, a symbol of the country and a UNESCO World Heritage Site.",
+        "name": "富士山",
+        "description": "富士山是日本最高的山峰，是日本的象征之一，也是联合国教科文组织世界遗产。它以其完美的锥形和壮丽的景色而闻名，吸引了大量登山者和游客前来欣赏其美丽。",
         "latitude": 35.3606,
         "longitude": 138.7274,
-        "image": "test.jpg"
+        "image": "MountFuji.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 26,
-        "name": "Pyramids of Giza",
-        "description": "Ancient Egyptian pyramids, including the Great Pyramid of Giza, one of the Seven Wonders of the Ancient World.",
+        "name": "吉萨金字塔",
+        "description": "吉萨金字塔是位于埃及吉萨的一组古代金字塔，包括著名的胡夫金字塔，是古代世界七大奇迹之一。它们是古埃及文明的象征，吸引了大量游客前来参观和了解其历史。",
         "latitude": 29.9792,
         "longitude": 31.1342,
-        "image": "test.jpg"
+        "image": "PyramidsOfGiza.jpg",
+        "category": "文化与宗教类"
     },
     {
         "id": 27,
-        "name": "Serengeti National Park",
-        "description": "A world-renowned wildlife park in Tanzania, famous for its annual migration of wildebeest and zebras.",
+        "name": "塞伦盖蒂国家公园",
+        "description": "塞伦盖蒂国家公园是位于坦桑尼亚的一个世界闻名的野生动物公园，以其一年一度的角马和斑马迁徙而闻名。这里是非洲大草原的象征，吸引了大量游客前来观赏野生动物和自然景观。",
         "latitude": -2.3386,
         "longitude": 34.8517,
-        "image": "test.jpg"
+        "image": "SerengetiNationalPark.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 28,
-        "name": "Machu Picchu",
-        "description": "An ancient Incan city in Peru, perched high in the Andes, a UNESCO World Heritage Site.",
+        "name": "马丘比丘",
+        "description": "马丘比丘是位于秘鲁的一座古代印加城市，坐落在安第斯山脉的高处，是联合国教科文组织世界遗产。它是印加文明的象征，吸引了大量游客前来探索其神秘的历史和壮丽的景色。",
         "latitude": -13.1631,
         "longitude": -72.5450,
-        "image": "test.jpg"
+        "image": "MachuPicchu.jpg",
+        "category": "文化与宗教类"
     },
     {
         "id": 29,
-        "name": "Iguazu Falls",
-        "description": "A stunning waterfall system on the border of Argentina and Brazil, one of the largest in the world.",
+        "name": "伊瓜苏瀑布",
+        "description": "伊瓜苏瀑布是位于阿根廷和巴西边境的一组壮观的瀑布，是世界上最大的瀑布系统之一。它以其宏伟的规模和多样的景观而闻名，吸引了大量游客前来观赏其壮丽的景色。",
         "latitude": -25.6804,
         "longitude": -54.4402,
-        "image": "test.jpg"
+        "image": "IguazuFalls.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 30,
-        "name": "Sydney Opera House",
-        "description": "A world-famous performing arts venue in Sydney, Australia, known for its unique design.",
+        "name": "悉尼歌剧院",
+        "description": "悉尼歌剧院是位于澳大利亚悉尼的一个世界著名的表演艺术场馆，以其独特的设计而闻名。它是现代建筑的杰作，吸引了大量游客前来参观和欣赏其美丽的建筑风格。",
         "latitude": -33.8568,
         "longitude": 151.2153,
-        "image": "test.jpg"
+        "image": "SydneyOperaHouse.jpg",
+        "category": "娱乐与休闲类"
     },
     {
         "id": 31,
-        "name": "Great Barrier Reef",
-        "description": "The world's largest coral reef system, off the coast of Queensland, Australia, a UNESCO World Heritage Site.",
+        "name": "大堡礁",
+        "description": "大堡礁是位于澳大利亚昆士兰州海岸的世界最大的珊瑚礁系统，是联合国教科文组织世界遗产。它以其丰富的海洋生物和多样的珊瑚景观而闻名，是潜水者和海洋爱好者的天堂。",
         "latitude": -18.2871,
         "longitude": 147.6992,
-        "image": "test.jpg"
+        "image": "GreatBarrierReef.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 32,
-        "name": "Uluru",
-        "description": "A massive sandstone monolith in the heart of Australia, a sacred site for the local Aboriginal people.",
+        "name": "乌鲁鲁",
+        "description": "乌鲁鲁是一座位于澳大利亚中部的巨大砂岩独石，是当地原住民的神圣之地。它以其独特的形状和壮丽的景色而闻名，吸引了大量游客前来参观和了解其文化和历史。",
         "latitude": -25.3444,
         "longitude": 131.0369,
-        "image": "test.jpg"
+        "image": "Uluru.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 33,
-        "name": "Table Mountain",
-        "description": "A flat-topped mountain overlooking Cape Town, South Africa, offering stunning views and a cable car ride.",
+        "name": "桌山",
+        "description": "桌山是一座位于南非开普敦的平顶山，提供城市和海湾的壮丽全景。游客可以乘坐缆车到达山顶，欣赏开普敦和周围自然景观的美丽景色。",
         "latitude": -33.9583,
         "longitude": 18.4236,
-        "image": "test.jpg"
+        "image": "TableMountain.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 34,
-        "name": "Victoria Falls",
-        "description": "One of the largest and most famous waterfalls in the world, located on the Zambezi River between Zambia and Zimbabwe.",
+        "name": "维多利亚瀑布",
+        "description": "维多利亚瀑布是位于赞比亚和津巴布韦边境的一组世界著名瀑布，以其宏伟的规模和壮丽的景色而闻名。它是世界上最宽的瀑布之一，吸引了大量游客前来观赏其自然奇观。",
         "latitude": -17.9243,
         "longitude": 25.8572,
-        "image": "test.jpg"
+        "image": "VictoriaFalls.jpg",
+        "category": "自然景观类"
     },
     {
         "id": 35,
-        "name": "Oriental Pearl Tower",
-        "description": "A iconic TV tower in Shanghai, China, symbolizing the city's skyline and offering panoramic views of the city.",
+        "name": "东方明珠塔",
+        "description": "东方明珠塔是位于中国上海的一座标志性电视塔，象征着城市的 skyline，提供城市全景。它是上海最著名的地标之一，吸引了大量游客前来参观和欣赏其美丽的建筑风格。",
         "latitude": 31.2397,
         "longitude": 121.4998,
-        "image": "test.jpg"
+        "image": "OrientalPearlTower.jpg",
+        "category": "名胜古迹类"
     }
 ]

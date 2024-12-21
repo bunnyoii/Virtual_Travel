@@ -4,34 +4,61 @@
 //
 //  SwiftUI 视图文件，用于定义应用程序的主界面
 //
-//  Updated by 刘淑仪 on 2024/12/20
+//  更新于 2024/12/20
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = LandmarkViewModel()
-    @EnvironmentObject var appSettings: AppSettings // 获取 AppSettings
+    @StateObject var viewModel = LandmarkViewModel() // 视图模型，管理地标数据和地图状态
+    @EnvironmentObject var appSettings: AppSettings // 获取 AppSettings，用于管理颜色模式
+    @State private var selectedCategory: String? = nil // 当前选中的类别
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) { // 去掉 VStack 的默认间距
                 // 搜索框
                 SearchBar(text: $viewModel.searchText)
-                    .padding(.horizontal)
+                    .padding(.horizontal, 8) // 水平填充
+                    .padding(.vertical, 8) // 垂直填充
                 
                 // 地图视图
                 MapView(viewModel: viewModel)
                     .frame(height: 300)
-                    .padding(.bottom)
+                    .padding(.bottom, 8) // 添加少量底部填充
                 
-                List(viewModel.filteredLandmarks) { landmark in
+                // 类别选择器
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) { // 调整 HStack 的间距
+                        // 显示所有类别，并允许用户选择
+                        ForEach(viewModel.categories, id: \.self) { category in
+                            Button(action: {
+                                selectedCategory = category
+                            }) {
+                                Text(category)
+                                    .padding(.vertical, 8) // 垂直填充
+                                    .padding(.horizontal, 12) // 水平填充
+                                    .background(selectedCategory == category ? Color.blue : Color.gray.opacity(0.2))
+                                    .foregroundColor(selectedCategory == category ? .white : .black)
+                                    .cornerRadius(8)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 8) // 水平填充
+                }
+                .background(Color.clear) // 去掉背景颜色
+                .padding(.vertical, 8) // 垂直填充
+                
+                // 根据选择的类别过滤景点
+                List(viewModel.filteredLandmarks.filter { selectedCategory == nil || $0.category == selectedCategory }) { landmark in
                     NavigationLink(destination: LandmarkDetailView(landmark: landmark, viewModel: viewModel)) {
                         Text(landmark.name)
                     }
                 }
-                .navigationTitle("Landmarks")
+                .listStyle(PlainListStyle()) // 使用 PlainListStyle 去掉列表的默认样式
             }
+
+            // 工具栏：显示收藏夹按钮还有亮暗模式切换按钮
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink(destination: FavoritesView(viewModel: viewModel)) {
@@ -49,6 +76,8 @@ struct ContentView: View {
                     }
                 }
             }
+            // 标题
+            .navigationTitle("Virtual Travel")
         }
     }
     
@@ -64,7 +93,7 @@ struct SearchBar: View {
     
     var body: some View {
         HStack {
-            TextField("Search...", text: $text)
+            TextField("搜索...", text: $text)
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))

@@ -4,27 +4,27 @@
 //
 //  SwiftUI 视图文件，用于显示单个地标的详细信息
 //
-//  Updated by 刘淑仪 on 2024/12/20
+//  更新于 2024/12/21
 //
 
 import SwiftUI
 import MapKit
 
 struct LandmarkDetailView: View {
-    let landmark: Landmark
-    @StateObject var locationManager = LocationManager()
-    @State private var distance: Double?
-    @ObservedObject var viewModel: LandmarkViewModel
-    @EnvironmentObject var appSettings: AppSettings
-    @AppStorage("favoriteLandmarksData") private var favoriteLandmarksData: Data?
-    @State private var favoriteLandmarks: [Int] = []
+    let landmark: Landmark // 当前地标
+    @StateObject var locationManager = LocationManager() // 位置管理器
+    @State private var distance: Double? // 用户位置到地标的距离
+    @ObservedObject var viewModel: LandmarkViewModel // 视图模型，管理地标数据
+    @EnvironmentObject var appSettings: AppSettings // 应用设置，管理颜色模式
+    @AppStorage("favoriteLandmarksData") private var favoriteLandmarksData: Data? // 存储收藏的地标数据
+    @State private var favoriteLandmarks: [Int] = [] // 收藏的地标 ID 列表
     @State private var nearbyRestaurants: [Place] = [] // 附近的餐厅
     @State private var nearbyHotels: [Place] = [] // 附近的旅馆
-
-    private let similarLandmarkCount = 3
-    private let defaultLocation = CLLocation(latitude: 37.8719, longitude: -122.2585)
-    private let geoapifyService = GeoapifyService() // 初始化 GeoapifyService
-
+    
+    private let similarLandmarkCount = 5 // 相似景点推荐的数量
+    private let defaultLocation = CLLocation(latitude: 37.8719, longitude: -122.2585) // 默认位置：加州伯克利大学
+    private let geoapifyService = GeoapifyService() // Geoapify 服务，用于获取附近的地点
+    
     var body: some View {
         ScrollView {
             // 景点图片
@@ -38,16 +38,16 @@ struct LandmarkDetailView: View {
                     .foregroundColor(.red)
                     .padding()
             }
-
+            
             VStack(alignment: .leading, spacing: 16) {
                 // 景点名称
                 Text(landmark.name)
                     .font(.title)
-
+                
                 // 景点描述
                 Text(landmark.description)
                     .font(.body)
-
+                
                 // 导航按钮、距离、收藏按钮和分享按钮在一排显示
                 HStack {
                     Button(action: {
@@ -55,14 +55,14 @@ struct LandmarkDetailView: View {
                     }) {
                         Image(systemName: "arrow.triangle.turn.up.right.diamond.fill") // 导航图标
                             .font(.title)
-                            .frame(width: 45, height: 45) // 统一设置图标大小
+                            .frame(width: 45, height: 45)
                             .background(Color.blue)
                             .foregroundColor(.white)
                             .cornerRadius(8)
                     }
-
+                    
                     Spacer()
-
+                    
                     Button(action: {
                         if favoriteLandmarks.contains(landmark.id) {
                             favoriteLandmarks.removeAll { $0 == landmark.id }
@@ -71,29 +71,30 @@ struct LandmarkDetailView: View {
                         }
                         saveFavoriteLandmarks()
                     }) {
-                        Image(systemName: favoriteLandmarks.contains(landmark.id) ? "heart.fill" : "heart")
+                        Image(systemName: favoriteLandmarks.contains(landmark.id) ? "heart.fill" : "heart")// 收藏图标
                             .font(.title)
-                            .frame(width: 45, height: 45) // 统一设置图标大小
+                            .frame(width: 45, height: 45)
                             .background(Color.red)
                             .foregroundColor(.white)
                             .cornerRadius(8)
                     }
-
+                    
                     Spacer()
-
+                    
                     Button(action: {
                         shareLandmark()
                     }) {
                         Image(systemName: "square.and.arrow.up") // 分享图标
                             .font(.title)
-                            .frame(width: 45, height: 45) // 统一设置图标大小
+                            .frame(width: 45, height: 45)
                             .background(Color.green)
                             .foregroundColor(.white)
                             .cornerRadius(8)
                     }
                     
                     Spacer()
-
+                    
+                    // 显示当前距离该景点的距离
                     if let distance = distance {
                         Text("\(String(format: "%.2f", distance / 1000)) km")
                             .font(.headline)
@@ -102,16 +103,17 @@ struct LandmarkDetailView: View {
                         Text("正在计算距离...")
                             .font(.headline)
                             .padding(.top)
-                    }                }
+                    }
+                }
                 .padding(.top)
-
+                
                 // 相似景点推荐
                 VStack(alignment: .leading, spacing: 8) {
                     Text("相似景点推荐")
                         .font(.headline)
                         .fontWeight(.bold)
                         .padding(.top)
-
+                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {
                             ForEach(similarLandmarks(), id: \.id) { similarLandmark in
@@ -140,14 +142,14 @@ struct LandmarkDetailView: View {
                     }
                 }
                 .padding(.top)
-
+                
                 // 附近餐厅推荐
                 VStack(alignment: .leading, spacing: 16) {
                     Text("附近餐厅推荐")
-                        .font(.headline) // 大一号字并加粗
+                        .font(.headline)
                         .fontWeight(.bold)
                         .padding(.top)
-
+                    
                     if nearbyRestaurants.isEmpty {
                         Text("抱歉，附近暂无餐厅") // 显示提示信息
                             .font(.subheadline)
@@ -160,7 +162,7 @@ struct LandmarkDetailView: View {
                                     .font(.subheadline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
-
+                                
                                 Text(restaurant.address)
                                     .font(.body)
                                     .foregroundColor(.gray)
@@ -170,14 +172,14 @@ struct LandmarkDetailView: View {
                     }
                 }
                 .padding(.top)
-
+                
                 // 附近旅馆推荐
                 VStack(alignment: .leading, spacing: 16) {
                     Text("附近旅馆推荐")
-                        .font(.headline) // 大一号字并加粗
+                        .font(.headline)
                         .fontWeight(.bold)
                         .padding(.top)
-
+                    
                     if nearbyHotels.isEmpty {
                         Text("抱歉，附近暂无旅馆") // 显示提示信息
                             .font(.subheadline)
@@ -190,7 +192,7 @@ struct LandmarkDetailView: View {
                                     .font(.subheadline)
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
-
+                                
                                 Text(hotel.address)
                                     .font(.body)
                                     .foregroundColor(.gray)
@@ -204,14 +206,15 @@ struct LandmarkDetailView: View {
             .padding()
         }
         .navigationTitle(landmark.name)
+
         .onAppear {
-            loadFavoriteLandmarks()
-            calculateDistance()
-            fetchNearbyPlaces()
+            loadFavoriteLandmarks() // 加载收藏列表
+            calculateDistance() // 计算用户位置到地标的距离
+            fetchNearbyPlaces() // 获取附近的餐厅和旅馆
             updateMapCenter() // 确保地图中心点更新为当前景点的经纬度
         }
     }
-
+    
     // 加载收藏列表
     func loadFavoriteLandmarks() {
         if let data = favoriteLandmarksData,
@@ -219,29 +222,29 @@ struct LandmarkDetailView: View {
             favoriteLandmarks = ids
         }
     }
-
+    
     // 保存收藏列表
     func saveFavoriteLandmarks() {
         if let data = try? JSONEncoder().encode(favoriteLandmarks) {
             favoriteLandmarksData = data
         }
     }
-
+    
     // 计算当前位置到景点的距离
     func calculateDistance() {
         let userLocation = locationManager.userLocation ?? defaultLocation
         let landmarkLocation = CLLocation(latitude: landmark.latitude, longitude: landmark.longitude)
         distance = userLocation.distance(from: landmarkLocation)
     }
-
+    
     // 获取附近的餐厅和旅馆
     func fetchNearbyPlaces() {
         let latitude = landmark.latitude
         let longitude = landmark.longitude
         let radius = 1500.0 // 搜索半径（米）
-
+        
         print("Fetching places for latitude: \(latitude), longitude: \(longitude)") // 打印经纬度
-
+        
         // 获取附近的餐厅
         geoapifyService.fetchNearbyPlaces(latitude: latitude, longitude: longitude, radius: radius, type: "catering.restaurant") { result in
             DispatchQueue.main.async {
@@ -257,7 +260,7 @@ struct LandmarkDetailView: View {
                 }
             }
         }
-
+        
         // 获取附近的旅馆
         geoapifyService.fetchNearbyPlaces(latitude: latitude, longitude: longitude, radius: radius, type: "accommodation.hotel") { result in
             DispatchQueue.main.async {
@@ -274,7 +277,7 @@ struct LandmarkDetailView: View {
             }
         }
     }
-
+    
     // 更新地图中心点为当前景点的经纬度
     func updateMapCenter() {
         viewModel.mapRegion = MKCoordinateRegion(
@@ -282,42 +285,42 @@ struct LandmarkDetailView: View {
             span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         )
     }
-
+    
     // 打开系统地图应用进行路线规划
     func openMapsForNavigation() {
         let destinationPlacemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: landmark.latitude, longitude: landmark.longitude))
         let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
         destinationMapItem.name = landmark.name
-
+        
         destinationMapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
     }
-
-    // 获取相似景点
+    
+    // 获取相似景点（相同类别，最多5个）
     func similarLandmarks() -> [Landmark] {
-        let allLandmarkIds = viewModel.landmarks.map { $0.id }
-        var randomIds = Set<Int>()
-
-        while randomIds.count < similarLandmarkCount {
-            if let randomId = allLandmarkIds.randomElement() {
-                if randomId != landmark.id {
-                    randomIds.insert(randomId)
-                }
-            }
+        // 过滤出相同类别的景点
+        let sameCategoryLandmarks = viewModel.landmarks.filter {
+            $0.category == landmark.category && $0.id != landmark.id
         }
-
-        return viewModel.landmarks.filter { randomIds.contains($0.id) }
+        
+        // 如果相同类别的景点不足5个，返回所有符合条件的景点
+        if sameCategoryLandmarks.count <= 5 {
+            return sameCategoryLandmarks
+        }
+        
+        // 如果超过5个，随机选择5个
+        return Array(sameCategoryLandmarks.shuffled().prefix(5))
     }
-
+    
     // 分享地标信息
     func shareLandmark() {
         let activityItems: [Any] = [
-            "来看看这个地标：\(landmark.name)",
+            "来看看这个景点：\(landmark.name)",
             UIImage(named: landmark.image) ?? UIImage(),
             "经纬度：\(landmark.latitude), \(landmark.longitude)"
         ]
-
+        
         let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-
+        
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let rootViewController = windowScene.windows.first?.rootViewController {
             rootViewController.present(activityViewController, animated: true, completion: nil)

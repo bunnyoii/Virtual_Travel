@@ -4,7 +4,7 @@
 //  
 //  VirtualTravel 应用程序的主入口，初始化应用程序并启动主视图
 //
-//  Updated by 刘淑仪 on 2024/12/20
+//  更新于 2024/12/21
 //
 
 import SwiftUI
