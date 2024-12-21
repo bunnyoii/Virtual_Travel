@@ -11,9 +11,13 @@ import SwiftUI
 
 @main
 struct VirtualTravelApp: App {
+    @StateObject private var appSettings = AppSettings() // 初始化 AppSettings
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appSettings) // 将 AppSettings 注入到环境中
+                .preferredColorScheme(appSettings.colorScheme) // 设置应用的颜色模式
         }
     }
 }

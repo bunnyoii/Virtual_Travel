@@ -11,19 +11,20 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = LandmarkViewModel()
-
+    @EnvironmentObject var appSettings: AppSettings // 获取 AppSettings
+    
     var body: some View {
         NavigationView {
             VStack {
                 // 搜索框
                 SearchBar(text: $viewModel.searchText)
                     .padding(.horizontal)
-
+                
                 // 地图视图
                 MapView(viewModel: viewModel)
                     .frame(height: 300)
                     .padding(.bottom)
-
+                
                 List(viewModel.filteredLandmarks) { landmark in
                     NavigationLink(destination: LandmarkDetailView(landmark: landmark, viewModel: viewModel)) {
                         Text(landmark.name)
@@ -38,15 +39,29 @@ struct ContentView: View {
                             .foregroundColor(.red)
                     }
                 }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        toggleColorScheme()
+                    }) {
+                        Image(systemName: appSettings.colorScheme == .dark ? "sun.max.fill" : "moon.fill")
+                            .foregroundColor(.blue)
+                    }
+                }
             }
         }
+    }
+    
+    // 切换颜色模式
+    private func toggleColorScheme() {
+        appSettings.colorScheme = (appSettings.colorScheme == .dark) ? .light : .dark
     }
 }
 
 // 自定义搜索框
 struct SearchBar: View {
     @Binding var text: String
-
+    
     var body: some View {
         HStack {
             TextField("Search...", text: $text)
@@ -60,7 +75,7 @@ struct SearchBar: View {
                             .foregroundColor(.gray)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 8)
-
+                        
                         if !text.isEmpty {
                             Button(action: {
                                 self.text = ""
