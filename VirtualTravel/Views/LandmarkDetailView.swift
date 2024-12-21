@@ -21,9 +21,22 @@ struct LandmarkDetailView: View {
     @State private var nearbyRestaurants: [Place] = [] // 附近的餐厅
     @State private var nearbyHotels: [Place] = [] // 附近的旅馆
     
+    @Environment(\.presentationMode) var presentationMode // 用于管理导航状态
+    
     private let similarLandmarkCount = 5 // 相似景点推荐的数量
     private let defaultLocation = CLLocation(latitude: 37.8719, longitude: -122.2585) // 默认位置：加州伯克利大学
     private let geoapifyService = GeoapifyService() // Geoapify 服务，用于获取附近的地点
+    
+    @State private var localMapRegion: MKCoordinateRegion
+    
+    init(landmark: Landmark, viewModel: LandmarkViewModel) {
+        self.landmark = landmark
+        self.viewModel = viewModel
+        self._localMapRegion = State(initialValue: MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: landmark.latitude, longitude: landmark.longitude),
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        ))
+    }
     
     var body: some View {
         ScrollView {
@@ -48,6 +61,24 @@ struct LandmarkDetailView: View {
                 Text(landmark.description)
                     .font(.body)
                 
+                // 查看附近地图按钮
+                Button(action: {
+                    // 更新主页的地图区域
+                    viewModel.mapRegion = MKCoordinateRegion(
+                        center: CLLocationCoordinate2D(latitude: landmark.latitude, longitude: landmark.longitude),
+                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                    )
+                    // 触发导航回到主界面
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("查看附近地图")
+                        .font(.headline)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .foregroundColor(.black)
+                        .cornerRadius(8)
+                }
+                .padding(.top)
                 // 导航按钮、距离、收藏按钮和分享按钮在一排显示
                 HStack {
                     Button(action: {
@@ -142,7 +173,6 @@ struct LandmarkDetailView: View {
                     }
                 }
                 .padding(.top)
-                
                 // 附近餐厅推荐
                 VStack(alignment: .leading, spacing: 16) {
                     Text("附近餐厅推荐")
@@ -206,12 +236,15 @@ struct LandmarkDetailView: View {
             .padding()
         }
         .navigationTitle(landmark.name)
-
         .onAppear {
-            loadFavoriteLandmarks() // 加载收藏列表
-            calculateDistance() // 计算用户位置到地标的距离
-            fetchNearbyPlaces() // 获取附近的餐厅和旅馆
-            updateMapCenter() // 确保地图中心点更新为当前景点的经纬度
+            loadFavoriteLandmarks()
+            calculateDistance()
+            fetchNearbyPlaces()
+            // 更新本地地图区域
+            localMapRegion = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: landmark.latitude, longitude: landmark.longitude),
+                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            )
         }
     }
     

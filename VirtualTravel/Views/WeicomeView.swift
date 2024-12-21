@@ -10,7 +10,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @State private var isShowingContentView = false // 控制是否显示主界面
+    @EnvironmentObject var appSettings: AppSettings // 获取 AppSettings
+    @State private var isShowingContentView = false
     
     var body: some View {
         NavigationView {
@@ -27,7 +28,7 @@ struct WelcomeView: View {
                     .foregroundColor(.blue)
                 
                 // 欢迎语
-                Text("欢迎来到 Virtual Travel！\n探索世界各地的景点，获取详细导览信息。")
+                Text("欢迎使用Virtual Travel！\n探索世界各地的景点，获取详细的导览信息。")
                     .font(.headline)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
@@ -49,7 +50,8 @@ struct WelcomeView: View {
                 }
             }
             .padding()
-            .navigationBarHidden(true) // 隐藏导航栏
+            .navigationBarHidden(true)  // 隐藏导航栏
+            .preferredColorScheme(appSettings.colorScheme) // 设置颜色模式
         }
     }
 }
