@@ -270,5 +270,13 @@
         "latitude": -17.9243,
         "longitude": 25.8572,
         "image": "test.jpg"
+    },
+    {
+        "id": 35,
+        "name": "Oriental Pearl Tower",
+        "description": "A iconic TV tower in Shanghai, China, symbolizing the city's skyline and offering panoramic views of the city.",
+        "latitude": 31.2397,
+        "longitude": 121.4998,
+        "image": "test.jpg"
     }
 ]

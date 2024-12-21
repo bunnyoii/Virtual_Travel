@@ -35,16 +35,6 @@
 			path = VirtualTravel;
 			sourceTree = "<group>";
 		};
-		4DAAE0C82D14410000A653B8 /* VirtualTravelTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VirtualTravelTests;
-			sourceTree = "<group>";
-		};
-		4DAAE0D22D14410000A653B8 /* VirtualTravelUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = VirtualTravelUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				4DAAE0B72D1440FE00A653B8 /* VirtualTravel */,
-				4DAAE0C82D14410000A653B8 /* VirtualTravelTests */,
-				4DAAE0D22D14410000A653B8 /* VirtualTravelUITests */,
 				4DAAE0B62D1440FE00A653B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				4DAAE0C72D14410000A653B8 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				4DAAE0C82D14410000A653B8 /* VirtualTravelTests */,
-			);
 			name = VirtualTravelTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				4DAAE0D12D14410000A653B8 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				4DAAE0D22D14410000A653B8 /* VirtualTravelUITests */,
 			);
 			name = VirtualTravelUITests;
 			packageProductDependencies = (
