@@ -28,7 +28,7 @@ struct WelcomeView: View {
                     .foregroundColor(.blue)
                 
                 // 欢迎语
-                Text("欢迎使用Virtual Travel！\n探索世界各地的景点，获取详细的导览信息。")
+                Text("欢迎使用全球导览！\n探索世界各地的景点，获取详细的导览信息。")
                     .font(.headline)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.gray)
@@ -36,7 +36,7 @@ struct WelcomeView: View {
                 // 开始按钮
                 NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true), isActive: $isShowingContentView) {
                     Button(action: {
-                        isShowingContentView = true // 点击按钮后切换到主界面
+                        isShowingContentView = true
                     }) {
                         Text("开始探索")
                             .font(.title2)
@@ -50,7 +50,7 @@ struct WelcomeView: View {
                 }
             }
             .padding()
-            .navigationBarHidden(true)  // 隐藏导航栏
+            .navigationBarHidden(true)
             .preferredColorScheme(appSettings.colorScheme) // 设置颜色模式
         }
     }

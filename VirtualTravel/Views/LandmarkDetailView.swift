@@ -74,11 +74,12 @@ struct LandmarkDetailView: View {
                     Text("查看附近地图")
                         .font(.headline)
                         .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .foregroundColor(.black)
+                        .background(Color(UIColor.systemGray5))
+                        .foregroundColor(Color(UIColor.label))
                         .cornerRadius(8)
                 }
                 .padding(.top)
+                
                 // 导航按钮、距离、收藏按钮和分享按钮在一排显示
                 HStack {
                     Button(action: {
@@ -156,23 +157,25 @@ struct LandmarkDetailView: View {
                                                 .scaledToFit()
                                                 .frame(width: 80, height: 80)
                                                 .clipShape(Circle())
-                                                .overlay(Circle().stroke(Color.white, lineWidth: 2))
-                                                .shadow(radius: 3)
+                                                .overlay(Circle().stroke(Color(UIColor.label), lineWidth: 2))
                                         } else {
                                             Text("图片加载失败")
-                                                .foregroundColor(.red)
+                                                .foregroundColor(Color(UIColor.label))
                                                 .frame(width: 80, height: 80)
                                         }
                                         Text(similarLandmark.name)
                                             .font(.caption)
-                                            .foregroundColor(.black)
+                                            .foregroundColor(Color(UIColor.label))
                                     }
+                                    .padding()
+                                    .cornerRadius(8)
                                 }
                             }
                         }
                     }
                 }
                 .padding(.top)
+                
                 // 附近餐厅推荐
                 VStack(alignment: .leading, spacing: 16) {
                     Text("附近餐厅推荐")
@@ -183,7 +186,7 @@ struct LandmarkDetailView: View {
                     if nearbyRestaurants.isEmpty {
                         Text("抱歉，附近暂无餐厅") // 显示提示信息
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color(UIColor.secondaryLabel)) // 使用系统次要文字颜色
                             .padding(.top, 8)
                     } else {
                         ForEach(nearbyRestaurants) { restaurant in
@@ -191,18 +194,20 @@ struct LandmarkDetailView: View {
                                 Text(restaurant.name)
                                     .font(.subheadline)
                                     .fontWeight(.bold)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color(UIColor.label)) // 使用系统文字颜色
                                 
                                 Text(restaurant.address)
                                     .font(.body)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(Color(UIColor.secondaryLabel)) // 使用系统次要文字颜色
                             }
                             .padding(.vertical, 8)
+                            .padding(.horizontal, 12)
+                            .cornerRadius(8)
                         }
                     }
                 }
                 .padding(.top)
-                
+
                 // 附近旅馆推荐
                 VStack(alignment: .leading, spacing: 16) {
                     Text("附近旅馆推荐")
@@ -213,7 +218,7 @@ struct LandmarkDetailView: View {
                     if nearbyHotels.isEmpty {
                         Text("抱歉，附近暂无旅馆") // 显示提示信息
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color(UIColor.secondaryLabel)) // 使用系统次要文字颜色
                             .padding(.top, 8)
                     } else {
                         ForEach(nearbyHotels) { hotel in
@@ -221,13 +226,15 @@ struct LandmarkDetailView: View {
                                 Text(hotel.name)
                                     .font(.subheadline)
                                     .fontWeight(.bold)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color(UIColor.label)) // 使用系统文字颜色
                                 
                                 Text(hotel.address)
                                     .font(.body)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(Color(UIColor.secondaryLabel)) // 使用系统次要文字颜色
                             }
                             .padding(.vertical, 8)
+                            .padding(.horizontal, 12)
+                            .cornerRadius(8)
                         }
                     }
                 }
